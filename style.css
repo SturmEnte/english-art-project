@@ -1,3 +1,24 @@
+html {
+	overflow: hidden;
+	height: 100vh;
+}
+
 body {
 	margin: 0;
+	overflow: scroll;
+	height: 100vh;
+	scroll-snap-type: y mandatory; /* Vertikal Scrollen und Snap Points streng einhalten */
+}
+
+.slide {
+	height: 100vh;
+	scroll-snap-align: start; /* An der Oberkante jeder Sektion soll gestoppt werden */
+}
+
+.slide:nth-of-type(even) {
+	background: #8cb11c;
+}
+
+.slide:nth-of-type(odd) {
+	background: #147c85;
 }

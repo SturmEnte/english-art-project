@@ -7,6 +7,44 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<div id="wrapper">Hello World</div>
+		<div id="wrapper">
+			<div class="slide">1</div>
+			<div class="slide">2</div>
+			<div class="slide">3</div>
+		</div>
+
+		<script>
+			const container = document.querySelector("#wrapper");
+			const slides = container.querySelectorAll(".slide");
+
+			window.addEventListener("scroll", () => {
+				let scrollPosition = window.scrollY;
+				let snappedSlideIndex = Math.floor(scrollPosition / slides[0].clientHeight);
+
+				container.scrollTo({
+					top: snappedSlideIndex * slides[0].clientHeight,
+					behavior: "smooth",
+				});
+			});
+		</script>
+
+		<!-- <canvas id="myCanvas"></canvas>
+		<script>
+			const canvas = document.getElementById("myCanvas");
+			const ctx = canvas.getContext("2d");
+
+			let x = 0;
+
+			function drawBackground() {
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.fillStyle = `hsl(${x}, 100%, 50%)`;
+				ctx.fillRect(0, 0, canvas.width, canvas.height);
+				x++;
+				requestAnimationFrame(drawBackground);
+			}
+
+			drawBackground();
+		</script>
+		-->
 	</body>
 </html>
