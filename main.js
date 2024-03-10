@@ -9,4 +9,6 @@ window.addEventListener("scroll", () => {
 		top: snappedSlideIndex * slides[0].clientHeight,
 		behavior: "smooth",
 	});
+
+	console.log("Scroll");
 });
